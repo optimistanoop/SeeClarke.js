@@ -4,7 +4,7 @@
   <p><small>"Any sufficiently advanced technology is indistinguishable from magic."
   <br>- <a href="https://en.wikipedia.org/wiki/Arthur_C._Clarke">Arthur C. Clarke</a></small>
   <br>
-  <p><a href="https://travis-ci.com/labofoz/SeeClarke"><img src="https://travis-ci.com/labofoz/SeeClarke.svg?branch=master" alt="build"></a><a href="https://codecov.io/gh/labofoz/SeeClarke">
+  <p><a href="https://travis-ci.com/labofoz/SeeClarke.js"><img src="https://travis-ci.com/labofoz/SeeClarke.js.svg?branch=master" alt="build"></a><a href="https://codecov.io/gh/labofoz/SeeClarke.js">
   <img src="https://codecov.io/gh/labofoz/SeeClarke.js/branch/master/graph/badge.svg" />
 </a>
 <br>
