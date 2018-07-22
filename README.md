@@ -28,6 +28,7 @@
   - [HTML5 projects](#html5-projects) - Learn how to add SeeClarke.js to your HTML5 projects
     - [Installing via script tag](#installing-via-script-tag)
     - [Installing via NPM](#installing-via-npm)
+    - [Using the values](#making-use-of-values)
 - [Legend](#legend):
   - 🧙 **Clarke** tells you about [Methods](https://github.com/labofoz/SeeClarke.js/wiki/Methods) and [Events](https://github.com/labofoz/SeeClarke.js/wiki/Events)
 
@@ -67,6 +68,7 @@ The following is a list of all the platforms and environments that we currently 
 
 > 🧙 **Clarke**: The first thing you'll want to do is get access to the `SeeClarke` class, so that you can instantiate it. Let's explore 2 options below!
 
+<a href="#installing-via-script-tag"></a>
 **Installing Via Script Tag:** The easiest way to get started, allowing you to quickly test in sandboxes like [CodePen](https://codepen.io), [JSFiddle](https://jsfiddle.net/), or any site on the web:
 
 ```html
@@ -77,6 +79,7 @@ The following is a list of all the platforms and environments that we currently 
 <script src="https://unpkg.com/seeclarke@0.0.3/dist/seeclarke.min.js"></script>
 ```
 
+<a href="#installing-via-npm"></a>
 **Installing Via NPM:** You'll first want to add the package as a dependency to your project with:
 ```bash
 # In your existing projects root
@@ -94,6 +97,32 @@ const SeeClarke = require('seeclarke')
 ```js
 // Instantiate an instance of SeeClarke and autostart it
 const seeclarke = new SeeClarke({autostart: true})
+```
+
+<a href="#using-the-values"></a>
+**Using the Values:**
+
+```js
+window.addEventListener('onSeeClarkePoseUpdates', (ev) => {
+  // Grab the SeeClarke instance that called this
+  const context = ev.details.context
+
+  // You can now access any of the properties, including the poses
+  const poses = context.poses
+
+  // Loop through poses to get their details
+  poses.forEach((pose, index) => {
+    // Relative to top left
+    let x = pose.pointedAt.x
+    let y = pose.pointedAt.y
+    // This number represents the "pixels away" from the screen
+    // - The closer you are the smaller this value and vice versa
+    let z = pose.pointedAt.z
+
+    // Do stuff with the x, y here!
+    // @SEE CodePen demos: https://codepen.io/collection/nryEYd/
+  })
+})
 ```
 
 ---
